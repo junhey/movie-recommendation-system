@@ -2,7 +2,7 @@
 
 ## 原始数据
 
-本实验采用数据集[MovieLens 100K Dataset](http://grouplens.org/datasets/movielens/)。这个数据集由国外GroupLens Research团队整理提供。 
+本实验采用数据集[MovieLens 100K Dataset](http://grouplens.org/datasets/movielens/)。这个数据集由国外GroupLens Research团队整理提供。数据集下载http://files.grouplens.org/datasets/movielens/ml-100k.zip
 
 这个数据集收集了943个用户对1682部电影的总共10,000条记录。所用文件如下
 
