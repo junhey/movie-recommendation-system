@@ -1,8 +1,31 @@
-# coding = utf-8
+# -*- coding: utf-8 -*-
+# --------------------------------------------------------
+# Name:        ItemBasedCF.py
+# Purpose:     基于项目的协同过滤推荐算法实现
+# Data:        MovieLens ml-latest-small
+# Language:    Python 3
+# Author:      junhey
+# E-mail:      junhey@foxmail.com
+# Created:     2018-03-05
+# --------------------------------------------------------
 
-# 基于项目的协同过滤推荐算法实现
+'''
+Similar movie number = 20
+Recommneded movie number = 10
+Load ./ml-latest-small/ratings.csv success!
+Split trainingSet and testSet success!
+TrainSet = 74997
+TestSet = 25007
+Total movie number = 8234
+Build co-rated users matrix success!
+Calculating movie similarity matrix ...
+Calculate movie similarity matrix success!
+Evaluating start ...
+precisioin=0.2630	recall=0.0706	coverage=0.0793
+
+'''
+
 import random
-
 import math
 from operator import itemgetter
 
@@ -133,7 +156,7 @@ class ItemBasedCF():
 
 
 if __name__ == '__main__':
-    rating_file = './ml-20m/ratings.csv'
+    rating_file = './ml-latest-small/ratings.csv'
     itemCF = ItemBasedCF()
     itemCF.get_dataset(rating_file)
     itemCF.calc_movie_sim()
