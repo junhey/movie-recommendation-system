@@ -19,3 +19,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+admin.site.site_header = '推荐系统后台管理';
+admin.site.index_title = '首页-推荐系统';
+admin.site.site_title = '推荐系统';
