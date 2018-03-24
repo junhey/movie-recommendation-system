@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from movie import views
 urlpatterns = [
+    path('', views.index,name='index'),
     path('admin/', admin.site.urls),
+    path('login/', views.rlogin, name="login"),
+    path('register/', views.register, name="register"),
+    path('logout/', views.rlogout, name="logout"),
+    
 ]
 
 admin.site.site_header = '推荐系统后台管理';
