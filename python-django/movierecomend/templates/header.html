@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<title>推荐系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+<div class="wrap-body">
+<header>	
+	<div class="wrap-header zerogrid">
+		<div class="row">
+			<div class="col-1-2">
+				<div class="wrap-col">
+					<div class="logo" style="font-size: 33px;padding: 16px 0;font-family: sans-serif;">电影网站</div>	
+				</div>
+			</div>
+			<div class="col-1-2">
+				<div class="wrap-col f-right">
+					<form method="get" action="/search" id="search"  >
+					  <input name="q" type="text" size="40" placeholder="搜索..." />
+					  <input type="submit" value="提交">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="menu">
+				<nav>
+					<div class="wrap-nav">
+					   <ul>
+						 <li class="active"><a href="index.html">首页</a></li>
+						 <li><a href="single.html">剧情片</a></li>
+						 <li><a href="single.html">爱情片</a></li>
+					   </ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>

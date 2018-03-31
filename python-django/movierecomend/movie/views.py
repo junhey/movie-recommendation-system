@@ -5,8 +5,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 # Create your views here.
 def index(request):
-    return HttpResponse('这是首页')
+    return render(request,'index.html',locals())
 
+def single(request):
+    return render(request,'single.html',locals())
 
 
 # 登录页面
