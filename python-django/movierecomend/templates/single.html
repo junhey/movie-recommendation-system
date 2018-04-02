@@ -1,12 +1,13 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html> 
 <head>
 	<meta charset="utf-8">
 	<title>推荐系统</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 </head>
 <body>
 <div class="wrap-body">
@@ -15,15 +16,15 @@
 		<div class="row">
 			<div class="col-1-2">
 				<div class="wrap-col">
-					<div class="logo"><a href="#"><img src="images/logo.png"/></a></div>	
+					<div class="logo" style="font-size: 33px;padding: 16px 0;font-family: sans-serif;">电影推荐系统</div>	
 				</div>
 			</div>
 			<div class="col-1-2">
 				<div class="wrap-col f-right">
 					<form method="get" action="/search" id="search"  >
-						  <input name="q" type="text" size="40" placeholder="Search..." />
-						  <input type="submit" value="Submit">
-						</form>
+						<input name="q" type="text" size="40" placeholder="搜索..." />
+						<input type="submit" value="提交">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -31,24 +32,17 @@
 			<div id="menu">
 				<nav>
 					<div class="wrap-nav">
-					   <ul>
-						 <li class="active"><a href="index.html">Home</a></li>
-						 <li><a href="single.html">GREATEST FILMS</a></li>
-						 <li><a href="single.html">THE BEST</a></li>
-						 <li><a href="single.html">OSCARS</a></li>
-						 <li><a href="single.html">GENRES</a></li>
-						 <li><a href="single.html">QUOTES</a></li>
-						 <li><a href="single.html">POSTERS</a></li>
-						 <li><a href="contact.html">CONTACT</a></li>
-					   </ul>
+						<ul>
+							<li class="active"><a href="index.html">首页</a></li>
+							<li><a href="single.html">剧情片</a></li>
+							<li><a href="single.html">爱情片</a></li>
+						</ul>
 					</div>
 				</nav>
 			</div>
 		</div>
 	</div>
 </header>
-
-
 <!--////////////////////////////////////Container-->
 <section id="container">
 	<div class="wrap-container zerogrid">
@@ -58,21 +52,17 @@
 					<div class="art-header">
 						<div class="col-1-3">
 							<div class="wrap-col">
-								<img src="images/boy7.png" />
+								<img src="/static/images/boy7.png" />
 							</div>
 						</div>
 						<div class="col-2-3">
 							<div class="wrap-col">
 								<ul>
-									<li><p>Tags: <a href="#">Action</a></p></li>
-									<li><p>Production: <a href="#">Action</a></p></li>
-									<li><p>Actor: <a href="#">Action</a></p></li>
-									<li><p>Director: <a href="#">Action</a></p></li>
-									<li><p>Nation: <a href="#">Action</a></p></li>
-									<li><p>Tags: <a href="#">Action</a></p></li>
-									<li><p>Upload: <a href="#">Action</a></p></li>
-									<li><a class="button bt1" href="#">Play</a><a class="button bt1" href="#">Trailer</a></li>
-									<li class="star"><a href="#"><img src="images/star.png" /></a></li>
+                                    <li><p>电影名: <a href="#">七号少年 Boy 7</a></p></li>
+                                    <li><p>电影类型: <a href="#">动作 / 科幻 / 惊悚</a></p></li>
+									<li><p>上映日期: <a href="#">2015-02-19(荷兰)</a></p></li>
+									<li><a class="button bt1" href="#">播放</a><a class="button bt1" href="#">评分</a></li>
+									<li class="star"><a href="#"><img src="/static/images/star.png" /></a></li>
 								</ul>
 							</div>
 						</div>
@@ -84,14 +74,14 @@
 						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
 						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
 						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-						<img src="images/0.jpg" />
+						<img src="/static/images/0.jpg" />
 						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
 						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
 						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
 						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
 						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
 						<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
-						<img src="images/17.jpg" />
+						<img src="/static/images/17.jpg" />
 						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
 						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
 						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
@@ -104,7 +94,7 @@
 						  </ol>
 						  <div class="clear"></div>
 						</div>
-						<img src="images/16.jpg" />
+						<img src="/static/images/16.jpg" />
 						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
 						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
 						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
@@ -120,25 +110,25 @@
 				</article>
 				<div class="widget wid-related">
 					<div class="wid-header">
-						<h5>Related Post</h5>
+						<h5>相关推荐</h5>
 					</div>
 					<div class="wid-content">
 						<div class="row">
 							<div class="col-1-3">
 								<div class="wrap-col">
-									<a href="#"><img src="images/10.jpg" /></a>
+									<a href="#"><img src="/static/images/10.jpg" /></a>
 									<a href="#"><h4>Vero eros et accumsan et iusto odio </h4></a>
 								</div>
 							</div>
 							<div class="col-1-3">
 								<div class="wrap-col">
-									<a href="#"><img src="images/13.jpg" /></a>
+									<a href="#"><img src="/static/images/13.jpg" /></a>
 									<a href="#"><h4>Vero eros et accumsan et iusto odio </h4></a>
 								</div>
 							</div>
 							<div class="col-1-3">
 								<div class="wrap-col">
-									<a href="#"><img src="images/6.jpg" /></a>
+									<a href="#"><img src="/static/images/6.jpg" /></a>
 									<a href="#"><h4>Vero eros et accumsan et iusto odio </h4></a>
 								</div>
 							</div>
@@ -152,22 +142,22 @@
 				<!---- Start Widget ---->
 				<div class="widget wid-new-updates">
 					<div class="wid-header">
-						<h5>Hot Updates !</h5>
+						<h5>最近更新</h5>
 					</div>
 					<div class="wid-content">
 						<ul>
-						<li><a href="#">Mad Max: Fury Road</a><span><img src="images/hot.png" /></span></li>
-						<li><a href="#">The Age of Adaline</a><span><img src="images/hot.png" /></span></li>
-						<li><a href="#">Pound of Flesh</a><span><img src="images/hot.png" /></span></li>
-						<li><a href="#">Bloodbath Island</a><span><img src="images/hot.png" /></span></li>
-						<li><a href="#">Pound of Flesh</a><span><img src="images/hot.png" /></span></li>
+						<li><a href="#">Mad Max: Fury Road</a><span><img src="/static/images/hot.png" /></span></li>
+						<li><a href="#">The Age of Adaline</a><span><img src="/static/images/hot.png" /></span></li>
+						<li><a href="#">Pound of Flesh</a><span><img src="/static/images/hot.png" /></span></li>
+						<li><a href="#">Bloodbath Island</a><span><img src="/static/images/hot.png" /></span></li>
+						<li><a href="#">Pound of Flesh</a><span><img src="/static/images/hot.png" /></span></li>
 						</ul>
 					</div>
 				</div>
 				<!---- Start Widget ---->
 				<div class="widget wid-tag">
 					<div class="wid-header">
-						<h5>Tags</h5>
+						<h5>标签</h5>
 					</div>
 					<div class="wid-content">
 						<ul>
@@ -181,67 +171,35 @@
 						<li><a href="#">aasdasls</a></li>
 						</ul>
 					</div>
-				</div>
-				<!---- Start Widget ---->
-				<div class="widget wid-post">
-					<div class="wid-header">
-						<h5>Today's movies</h5>
-					</div>
-					<div class="wid-content">
-						<div class="post">
-							<a href="#"><img src="images/1.jpg"/></a>
-							<div class="wrapper">
-							  <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="images/star.png" /></a>
-							</div>
-						</div>
-						<div class="post">
-							<a href="#"><img src="images/2.jpg"/></a>
-							<div class="wrapper">
-							 <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="images/star.png" /></a>
-							</div>
-						</div>
-						<div class="post">
-							<a href="#"><img src="images/3.jpg"/></a>
-							<div class="wrapper">
-							 <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="images/star.png" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
+				</div>				
 				<!---- Start Widget ---->
 				<div class="widget wid-last-updates">
 					<div class="wid-header">
-						<h5>Lastest Updates</h5>
+						<h5>推荐电影</h5>
 					</div>
 					<div class="wid-content">
 						<div class="post">
-							<a href="#"><img src="images/1.jpg"/></a>
+							<a href="#"><img src="/static/images/1.jpg"/></a>
 							<div class="wrapper">
-							  <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="images/star.png" /></a>
+								<a href="#"><h6>A Blue Morning</h6></a>
+								<p>March 1, 2015</p>
+								<a href="#"><img src="/static/images/star.png" /></a>
 							</div>
 						</div>
 						<div class="post">
-							<a href="#"><img src="images/2.jpg"/></a>
+							<a href="#"><img src="/static/images/2.jpg"/></a>
 							<div class="wrapper">
-							 <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="images/star.png" /></a>
+								<a href="#"><h6>A Blue Morning</h6></a>
+								<p>March 1, 2015</p>
+								<a href="#"><img src="/static/images/star.png" /></a>
 							</div>
 						</div>
 						<div class="post">
-							<a href="#"><img src="images/3.jpg"/></a>
+							<a href="#"><img src="/static/images/3.jpg"/></a>
 							<div class="wrapper">
-							 <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="images/star.png" /></a>
+								<a href="#"><h6>A Blue Morning</h6></a>
+								<p>March 1, 2015</p>
+								<a href="#"><img src="/static/images/star.png" /></a>
 							</div>
 						</div>
 					</div>
@@ -253,90 +211,14 @@
 
 <!--////////////////////////////////////Footer-->
 <footer>
-	<div class="zerogrid">
-		<div class="wrap-footer">
-			<div class="row">
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<div class="widget wid-about">
-							<div class="wid-header">
-								<h5>Welcome</h5>
-							</div>
-							<div class="logo"><a href="#"><img src="images/logo.png"/></a></div>
-							<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque quod maxime placeat 
-								facere possimus nihil impedit quo minus id quod maxime placeat facere possimus. </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<div class="widget wid-meta">
-							<div class="wid-header">
-								<h5>Links List</h5>
-							</div>
-							<div class="widget-content">
-								<div class="row">
-									<ul>
-										<li><a href="#">> Lorem ipsum dolor sit </a></li>
-										<li><a href="#">> Nullam venenatis lacus a </a></li>
-										<li><a href="#">> Morbi ut sapien nec nisl</a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-										<li><a href="#">> Sed in nunc non eleifend  </a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<div class="widget wid-report">
-							<div class="wid-header">
-								<h5>Report Link</h5>
-							</div>
-							<div class="wid-content">
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
-								eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-								At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr,  
-								sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<div class="widget wid-meta">
-							<div class="wid-header">
-								<h5>Links List</h5>
-							</div>
-							<div class="widget-content">
-								<div class="row">
-									<ul>
-										<li><a href="#">> Lorem ipsum dolor sit </a></li>
-										<li><a href="#">> Nullam venenatis lacus a </a></li>
-										<li><a href="#">> Morbi ut sapien nec nisl</a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-										<li><a href="#">> Sed in nunc non eleifend  </a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="bottom-footer">
 		<div class="wrap-bottom ">
 			<div class="copyright">
-				<p>©2015 - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+				<p>©2018 <a href="http://www.junhey.com/" target="_blank" >junhey</a></p>
 			</div>
 		</div>
 	</div>
 </footer>
-
 
 </div>
 
