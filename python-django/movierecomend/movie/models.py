@@ -18,8 +18,7 @@ class Genres(models.Model):
 class Film(models.Model):
     name = models.CharField(verbose_name='电影名',max_length=20)
     brief = models.TextField(verbose_name='电影介绍')
-    genres = models.ForeignKey(Genres,verbose_name='电影分类',on_delete=models.CASCADE)
-    rete =models.CharField(verbose_name='电影评分',max_length=5)
+    rate =models.CharField(verbose_name='电影评分',max_length=5)
     link = models.CharField(verbose_name='电影链接',max_length=50)
     img = models.CharField(verbose_name='电影图片',max_length=50)
     create_date = models.CharField(verbose_name='日期',max_length=30)
