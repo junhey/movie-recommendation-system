@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import *
 
 class FilmAdmin(admin.ModelAdmin):
-    list_display = ['id','name','brief','genres']
+    list_display = ['id','name','rate','create_date']
 
 
 class GenresAdmin(admin.ModelAdmin):

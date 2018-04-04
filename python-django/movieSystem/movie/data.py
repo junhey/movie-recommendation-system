@@ -5,9 +5,18 @@ import re
 from bs4 import BeautifulSoup
 import time
 
+
+
+import subprocess
+import os
+from django.core.wsgi import get_wsgi_application
+import sys
+sys.path.extend(['D:\\github\\movie-recommendation-system\\python-django\\movieSystem',])
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "movierecomend.settings")
+application = get_wsgi_application()
 import django
 django.setup()
-from movie.models import Film
+from movie.models import *
 
 # 设置headers
 headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'}
@@ -31,7 +40,7 @@ def get_info_movie(url):
     if(response.status_code!=404):
         soup = BeautifulSoup(response.text,'lxml')
         name = soup.select('div#content > h1 > span')[0].get_text()
-        brief = soup.find_all("span", attrs={"property": "v:summary"})[0].get_text()
+        brief = soup.find_all("span", attrs={"property": "v:summary"})[0].get_text().strip()
         rate = soup.find_all("strong", attrs={"property": "v:average"})[0].get_text()
         link = re.findall('<span class="pl">IMDb链接:</span>[^"]*"(.*?)"',response.text,re.S)[0]
         img = soup.find_all("img", attrs={"rel": "v:image"})[0]['src']
