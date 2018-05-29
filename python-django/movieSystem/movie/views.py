@@ -16,7 +16,9 @@ def index(request):
 
 def single(request,id):
     detail = Film.objects.get(id=id)
-    print(detail)
+    related_list = Film.objects.all()[:3]
+    new_list = Film.objects.all()[:8]
+    hot_list = Film.objects.all().order_by('-create_date')[:3]
     return render(request,'single.html',locals())
 
 

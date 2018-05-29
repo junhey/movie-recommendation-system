@@ -80,7 +80,7 @@
 									<div class="view effect">  
 										<img class="thumb" src="{{item.img}}"  />
 										<div class="mask">  
-										<a href="single.html?id=1" class="info" title="Full Image"><img src="{{item.img}}" /></a>  
+										<a href="{% url 'single' item.id %}" class="info" title="Full Image"><img src="{{item.img}}" /></a>  
 										</div>
 									</div>
 									<div class="clear"></div>
@@ -105,7 +105,7 @@
 					<div class="wid-content">
 						<ul>
 							{% for item in new_list %}
-								<li><a href="#">{{item.name}}</a><span><img src="/static/images/hot.png" /></span></li>
+								<li><a href="{% url 'single' item.id %}">{{item.name}}</a><span><img src="/static/images/hot.png" /></span></li>
 							{% endfor %}
 						</ul>
 					</div>
@@ -118,11 +118,11 @@
 					<div class="wid-content">
 						{% for item in hot_list %}
 						<div class="post">
-							<a href="#"><img src="{{item.img}}"/></a>
+							<a href="{% url 'single' item.id %}"><img src="{{item.img}}"/></a>
 							<div class="wrapper">
-							  <a href="#"><h6>{{item.name}}</h6></a>
+							  <a href="{% url 'single' item.id %}"><h6>{{item.name}}</h6></a>
 							  <p>{{item.create_date}}</p>
-							  <a href="#">评分{{item.rate}}</a>
+							  <a href="{% url 'single' item.id %}">评分{{item.rate}}</a>
 							</div>
 						</div>
 						{% endfor %}

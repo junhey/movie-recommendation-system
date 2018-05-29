@@ -34,8 +34,6 @@
 					<div class="wrap-nav">
 						<ul>
 							<li class="active"><a href="index.html">首页</a></li>
-							<li><a href="single.html">剧情片</a></li>
-							<li><a href="single.html">爱情片</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -52,59 +50,23 @@
 					<div class="art-header">
 						<div class="col-1-3">
 							<div class="wrap-col">
-								<img src="/static/images/boy7.png" />
+								<img src="{{detail.img}}" />
 							</div>
 						</div>
 						<div class="col-2-3">
 							<div class="wrap-col">
 								<ul>
-                                    <li><p>电影名: <a href="#">七号少年 Boy 7</a></p></li>
-                                    <li><p>电影类型: <a href="#">动作 / 科幻 / 惊悚</a></p></li>
-									<li><p>上映日期: <a href="#">2015-02-19(荷兰)</a></p></li>
+                                    <li><p>电影名: <a href="#">{{detail.name}}</a></p></li>
+									<li><p>上映日期: <a href="#">{{detail.create_date}}</a></p></li>
 									<li><a class="button bt1" href="#">播放</a><a class="button bt1" href="#">评分</a></li>
-									<li class="star"><a href="#"><img src="/static/images/star.png" /></a></li>
+									<li><p>评分: <a href="#">{{detail.rate}}</a></p></li>
 								</ul>
 							</div>
 						</div>
 						<div class="clear"></div>
 					</div>
 					<div class="art-content">
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
-						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
-						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-						<img src="/static/images/0.jpg" />
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
-						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
-						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-						<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
-						<img src="/static/images/17.jpg" />
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
-						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
-						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,aaszx asqr amet vultatup duista.justo duo dolores et ea rebum</p>
-						<div class="note">
-						  <ol>
-							<li>Lorem ipsum</li>
-							<li>Sit amet vultatup nonumy</li>
-							<li>Duista sed diam</li>
-						  </ol>
-						  <div class="clear"></div>
-						</div>
-						<img src="/static/images/16.jpg" />
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
-						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
-						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
-						eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-						At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, 
-						sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+						<p>{{detail.brief}}</p>
 						<div class="clear"></div>
 					</div>
 				</article>
@@ -114,24 +76,14 @@
 					</div>
 					<div class="wid-content">
 						<div class="row">
+							{% for item in related_list %}
 							<div class="col-1-3">
 								<div class="wrap-col">
-									<a href="#"><img src="/static/images/10.jpg" /></a>
-									<a href="#"><h4>Vero eros et accumsan et iusto odio </h4></a>
+									<a href="{% url 'single' item.id %}"><img src="{{item.img}}" /></a>
+									<a href="{% url 'single' item.id %}"><h4>{{item.name}}</h4></a>
 								</div>
 							</div>
-							<div class="col-1-3">
-								<div class="wrap-col">
-									<a href="#"><img src="/static/images/13.jpg" /></a>
-									<a href="#"><h4>Vero eros et accumsan et iusto odio </h4></a>
-								</div>
-							</div>
-							<div class="col-1-3">
-								<div class="wrap-col">
-									<a href="#"><img src="/static/images/6.jpg" /></a>
-									<a href="#"><h4>Vero eros et accumsan et iusto odio </h4></a>
-								</div>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
@@ -146,62 +98,28 @@
 					</div>
 					<div class="wid-content">
 						<ul>
-						<li><a href="#">Mad Max: Fury Road</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">The Age of Adaline</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">Pound of Flesh</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">Bloodbath Island</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">Pound of Flesh</a><span><img src="/static/images/hot.png" /></span></li>
+							{% for item in new_list %}
+								<li><a href="{% url 'single' item.id %}">{{item.name}}</a><span><img src="/static/images/hot.png" /></span></li>
+							{% endfor %}
 						</ul>
 					</div>
-				</div>
-				<!---- Start Widget ---->
-				<div class="widget wid-tag">
-					<div class="wid-header">
-						<h5>标签</h5>
-					</div>
-					<div class="wid-content">
-						<ul>
-						<li><a href="#">animals</a></li>
-						<li><a href="#">ssdad</a></li>
-						<li><a href="#">ss</a></li>
-						<li><a href="#">asdas</a></li>
-						<li><a href="#">asdsals</a></li>
-						<li><a href="#">dasdas</a></li>
-						<li><a href="#">animals</a></li>
-						<li><a href="#">aasdasls</a></li>
-						</ul>
-					</div>
-				</div>				
+				</div>	
 				<!---- Start Widget ---->
 				<div class="widget wid-last-updates">
 					<div class="wid-header">
 						<h5>推荐电影</h5>
 					</div>
 					<div class="wid-content">
+						{% for item in hot_list %}
 						<div class="post">
-							<a href="#"><img src="/static/images/1.jpg"/></a>
+							<a href="{% url 'single' item.id %}"><img src="{{item.img}}"/></a>
 							<div class="wrapper">
-								<a href="#"><h6>A Blue Morning</h6></a>
-								<p>March 1, 2015</p>
-								<a href="#"><img src="/static/images/star.png" /></a>
+								<a href="{% url 'single' item.id %}"><h6>{{item.name}}</h6></a>
+								<p>{{item.create_date}}</p>
+								<a href="{% url 'single' item.id %}">评分{{item.rate}}</a>
 							</div>
 						</div>
-						<div class="post">
-							<a href="#"><img src="/static/images/2.jpg"/></a>
-							<div class="wrapper">
-								<a href="#"><h6>A Blue Morning</h6></a>
-								<p>March 1, 2015</p>
-								<a href="#"><img src="/static/images/star.png" /></a>
-							</div>
-						</div>
-						<div class="post">
-							<a href="#"><img src="/static/images/3.jpg"/></a>
-							<div class="wrapper">
-								<a href="#"><h6>A Blue Morning</h6></a>
-								<p>March 1, 2015</p>
-								<a href="#"><img src="/static/images/star.png" /></a>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
