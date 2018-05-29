@@ -33,9 +33,7 @@
 				<nav>
 					<div class="wrap-nav">
 					   <ul>
-						 <li class="active"><a href="index.html">首页</a></li>
-						 <li><a href="single.html">剧情片</a></li>
-						 <li><a href="single.html">爱情片</a></li>
+						 	<li class="active"><a href="index.html">首页</a></li>
 					   </ul>
 					</div>
 				</nav>
@@ -43,7 +41,6 @@
 		</div>
 	</div>
 </header>
-
 <!--////////////////////////////////////Container-->
 <section id="container">
 	<div class="wrap-container zerogrid">
@@ -54,303 +51,47 @@
 						<div class="title">
 							<center><h2>电影</h2></center>
 						</div>
-						<ul>
-							<li>
-								<select>
-									<option value="audi" selected>Type</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-								</select>
-							</li>
-							<li><a class="button " href="#">Search</a></li>
-						</ul>
 					</div>
 					<div class="row">
+						{% for item in index_list %}
 						<div class="col-1-4">
 							<div class="wrap-col">
 								<div class="post">
 									<div class="view effect">  
-									 <img class="thumb" src="/static/images/1.jpg"  />
+									 <img class="thumb" src="{{item.img}}"  />
 									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
+										<a href="{% url 'single' item.id %}" class="info" title="Full Image"><img src="{{item.img}}" /></a>  
 									  </div>  
 									  
 									</div>
 									<div class="clear"></div>
-									<a href="single.html"><h3>Lethal Weapon 4</h3></a>
-									<span>Lorem ipsum dolor sit</span>
+									<a href="{% url 'single' item.id %}"><h3>{{item.name}}</h3></a>
+									<span>{{item.create_date}}</span>
 								</div>
 							</div>
 						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/2.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									 <img class="thumb" src="/static/images/4.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a> 
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Lord Of War</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect"> 
-									  <img class="thumb" src="/static/images/5.jpg"  />  
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>The Sorcerer's Apprentice</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 					<div class="row">
+						{% for item in index_list2 %}
 						<div class="col-1-4">
 							<div class="wrap-col">
 								<div class="post">
 									<div class="view effect">  
-									  <img class="thumb" src="/static/images/3.jpg"  />   
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a> 
-									  </div>  
+										<img class="thumb" src="{{item.img}}"  />
+										<div class="mask">  
+										<a href="single.html?id=1" class="info" title="Full Image"><img src="{{item.img}}" /></a>  
+										</div>
 									</div>
-									<a href="single.html"><h3>National Treasure</h3></a>
-									<span>Lorem ipsum dolor sit</span>
+									<div class="clear"></div>
+									<a href="single.html"><h3>{{item.name}}</h3></a>
+									<span>{{item.create_date}}</span>
 								</div>
 							</div>
 						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/6.jpg"  />   
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Seeking Justice</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/7.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Season Of The Witch</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/8.jpg"  />   
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Three Mustketeers</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
-					<center><div class="pagination">
-						<a href="#" class="page gradient">first</a><a
-						href="#" class="page gradient">2</a><a href="#"
-						class="page gradient">3</a><span class=
-						"page active">4</span><a href="#" class=
-						"page gradient">5</a><a href="#" class=
-						"page gradient">6</a><a href="#" class=
-						"page gradient">last</a>
-					</div></center>
-				</div>
-				<div class="serie">
-					<div class="row type">
-						<div class="title">
-							<center><h2>推荐电影</h2></center>
-						</div>
-						<ul>
-							<li>
-								<select>
-									<option value="audi" selected>Type</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-									<option value="volvo">Text Text</option>
-									<option value="saab">Text Text</option>
-								</select>
-							</li>
-							
-							<li><a class="button " href="#">Search</a></li>
-						</ul>
-					</div>
-					<div class="row">
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/9.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/10.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a> 
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									 <img class="thumb" src="/static/images/4.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a> 
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect"> 
-									  <img class="thumb" src="/static/images/11.jpg"  />  
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a> 
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/12.jpg"  />   
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a> 
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/13.jpg"  />   
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/19.jpg"  /> 
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-4">
-							<div class="wrap-col">
-								<div class="post">
-									<div class="view effect">  
-									  <img class="thumb" src="/static/images/20.jpg"  />   
-									  <div class="mask">  
-										<a href="single.html" class="info" title="Full Image"><img src="/static/images/play_button_64.png" /></a>  
-									  </div>  
-									</div>
-									<a href="single.html"><h3>Film's Name</h3></a>
-									<span>Lorem ipsum dolor sit</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<center><div class="pagination">
-						<a href="#" class="page gradient">first</a><a
-						href="#" class="page gradient">2</a><a href="#"
-						class="page gradient">3</a><span class=
-						"page active">4</span><a href="#" class=
-						"page gradient">5</a><a href="#" class=
-						"page gradient">6</a><a href="#" class=
-						"page gradient">last</a>
-					</div></center>
+					<center></center>
 				</div>
 			</div>
 		</div>
@@ -363,62 +104,28 @@
 					</div>
 					<div class="wid-content">
 						<ul>
-						<li><a href="#">Mad Max: Fury Road</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">The Age of Adaline</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">Pound of Flesh</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">Bloodbath Island</a><span><img src="/static/images/hot.png" /></span></li>
-						<li><a href="#">Pound of Flesh</a><span><img src="/static/images/hot.png" /></span></li>
+							{% for item in new_list %}
+								<li><a href="#">{{item.name}}</a><span><img src="/static/images/hot.png" /></span></li>
+							{% endfor %}
 						</ul>
 					</div>
-				</div>
-				<!---- Start Widget ---->
-				<div class="widget wid-tag">
-					<div class="wid-header">
-						<h5>标签</h5>
-					</div>
-					<div class="wid-content">
-						<ul>
-						<li><a href="#">animals</a></li>
-						<li><a href="#">ssdad</a></li>
-						<li><a href="#">ss</a></li>
-						<li><a href="#">asdas</a></li>
-						<li><a href="#">asdsals</a></li>
-						<li><a href="#">dasdas</a></li>
-						<li><a href="#">animals</a></li>
-						<li><a href="#">aasdasls</a></li>
-						</ul>
-					</div>
-				</div>				
+				</div>	
 				<!---- Start Widget ---->
 				<div class="widget wid-last-updates">
 					<div class="wid-header">
 						<h5>推荐电影</h5>
 					</div>
 					<div class="wid-content">
+						{% for item in hot_list %}
 						<div class="post">
-							<a href="#"><img src="/static/images/1.jpg"/></a>
+							<a href="#"><img src="{{item.img}}"/></a>
 							<div class="wrapper">
-							  <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="/static/images/star.png" /></a>
+							  <a href="#"><h6>{{item.name}}</h6></a>
+							  <p>{{item.create_date}}</p>
+							  <a href="#">评分{{item.rate}}</a>
 							</div>
 						</div>
-						<div class="post">
-							<a href="#"><img src="/static/images/2.jpg"/></a>
-							<div class="wrapper">
-							 <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="/static/images/star.png" /></a>
-							</div>
-						</div>
-						<div class="post">
-							<a href="#"><img src="/static/images/3.jpg"/></a>
-							<div class="wrapper">
-							 <a href="#"><h6>A Blue Morning</h6></a>
-							  <p>March 1, 2015</p>
-							  <a href="#"><img src="/static/images/star.png" /></a>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>

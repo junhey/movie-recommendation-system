@@ -208,7 +208,7 @@ article .art-content ol {float: left;text-align: justify;margin: 10px 50px;font-
 
 .widget.wid-last-updates {}
 .widget.wid-last-updates img{float: left; margin: 15px 10px; max-width: 130px;}
-.widget.wid-last-updates h6{color:#fcab2b;}
+.widget.wid-last-updates h6{color:#fcab2b;width: 200px;overflow: hidden;}
 .widget.wid-last-updates .wrapper {vertical-align: middle;text-align: left;line-height: 1.4em;padding-bottom: 7px;margin-top: 22px;display: inline-block;}
 
 .widget.wid-gallery {}
