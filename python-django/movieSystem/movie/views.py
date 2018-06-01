@@ -3,11 +3,22 @@ from django.http import JsonResponse,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
+from .models import *
 # Create your views here.
 def index(request):
+    # 返回最热的4条数据
+    index_list = Film.objects.all().order_by('-rate')[:4]
+    index_list2 = Film.objects.all().order_by('-rate')[5:8]
+    new_list = Film.objects.all()[:8]
+    hot_list = Film.objects.all().order_by('-create_date')[:3]
+    print(hot_list)
     return render(request,'index.html',locals())
 
-def single(request):
+def single(request,id):
+    detail = Film.objects.get(id=id)
+    related_list = Film.objects.all()[:3]
+    new_list = Film.objects.all()[:8]
+    hot_list = Film.objects.all().order_by('-create_date')[:3]
     return render(request,'single.html',locals())
 
 

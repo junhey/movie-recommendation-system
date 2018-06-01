@@ -18,7 +18,7 @@ from django.urls import path
 from movie import views
 urlpatterns = [
     path('', views.index,name='index'),
-    path('single/', views.single,name='single'),
+    path('single/<int:id>/', views.single,name='single'),
     path('admin/', admin.site.urls),
     path('login/', views.rlogin, name="login"),
     path('register/', views.register, name="register"),
